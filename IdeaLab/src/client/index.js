@@ -1,11 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom";
-
-const Index = () => {
-  return <div>Hello React!</div>;
-};
+import React from 'react';
+import ReactDOM from 'react-dom';
+// import './index.css';
+import App from './home';
+// import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-    <Index />, 
-    document.getElementById("index")
-); 
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('index')
+);
