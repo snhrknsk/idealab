@@ -23,7 +23,7 @@ export default function IdeaLab() {
 				<Route path="/idealab/policy" />
 				<Route path="/idealab/info" />
 				<Route path="/user" />
-				<Route path="/newidea" />
+				<Route path="/newidea/:template" />
 				<Route path="/upgrade" />
 				<Route path="/idea/:id" />{/** p304*/}
 			</Switch>

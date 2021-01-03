@@ -25,8 +25,9 @@ const useStyles = makeStyles((theme) => ({
     height: 350,
   },
   container: {
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4),
+    margin: theme.spacing(2,2,2),
+    // paddingTop: theme.spacing(4),
+    // paddingBottom: theme.spacing(4),
   },
   divider: {
     margin: theme.spacing(2, 0),
@@ -39,7 +40,7 @@ export default function MainPage () {
     <TemplatePage>
       {/* <div className={useStyles.container}></div> */}
       <Container maxWidth="xl" className={useStyles.container} >
-        <Grid container spacing={3}>
+        <Grid container spacing={3} >
           {/* Idea Template */}
           <Grid item xs={12} md={9} lg={9}>
             <Paper className={useStyles.paper}>
