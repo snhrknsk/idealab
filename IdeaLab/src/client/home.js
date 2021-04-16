@@ -9,6 +9,7 @@ import {
 import SignInPage from './pages/auth/signinPage';
 import SignUpPage from './pages/auth/signupPage';
 import MainPage from './pages/main/mainPage';
+import Sample from './pages/sample'
 
 export default function IdeaLab() {
   return (
@@ -16,9 +17,9 @@ export default function IdeaLab() {
 			<Switch>				
 				<Route path="/" component={MainPage} exact />
 				<Route path="/home" component={MainPage} />
-				<Route path="/testpage" component={TestPage} />
 				<Route path="/signin" component={SignInPage} />
 				<Route path="/signup" component={SignUpPage} />
+				<Route path="/sample" component={Sample} />
 				<Route path="/idealab" />
 				<Route path="/idealab/policy" />
 				<Route path="/idealab/info" />
@@ -26,6 +27,7 @@ export default function IdeaLab() {
 				<Route path="/newidea/:template" />
 				<Route path="/upgrade" />
 				<Route path="/idea/:id" />{/** p304*/}
+				<Route path="/idea/all" />
 			</Switch>
 		</Router>
   );

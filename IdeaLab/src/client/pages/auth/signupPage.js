@@ -63,7 +63,7 @@ export default function SignInPage() {
               <TextField variant="outlined" margin="normal" required fullWidth name="validatepassword" label="パスワード(確認)" type="password" id="password" autoComplete="current-password"/>
               <div className={classes.component}>
               <FormControl component="fieldset">
-                <FormLabel component="legend">Grade</FormLabel>
+                <FormLabel component="legend">グレード</FormLabel>
                 <RadioGroup row aria-label="grade" name="grade" defaultValue="無料">
                   <FormControlLabel value="無料" control={<Radio color="primary" />} label="無料"/>
                   <FormControlLabel value="premium1" control={<Radio color="primary" />} label="Premium1"/>
