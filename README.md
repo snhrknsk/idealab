@@ -7,6 +7,7 @@
 個人開発練習用アプリとして始めますが本格的に作成公開予定
 
 # 環境構築
+## 初期設定
 参考：  
 <https://qiita.com/ohs30359-nobuhara/items/bdc06b2db1bef7af2439>
 環境構築コマンド
@@ -87,5 +88,55 @@ package.json
 * Server, Client同時実行コマンド
   npm run dev
 
+## Database設定
+### Install
+'''
+$ npm i -S mysql
+$ npm i -S mysql2
+$ npm i -S sequelize
+sequelize-cli is installed to global to use sequelize command under server directory
+$ npm i -S sequelize-cli -g
+'''
+### Database作成
+以下のコマンドをserverフォルダ下で初回実行
+'''
+sequelize init
+'''
+config\config.jsonを編集
+'''
+"username": "root",
+"password": "password",
+"database": "databse name",
+"host": "host name or IP address",
+"dialect": "mysql"
+'''
+テーブル作成
+'''
+cd {checkout folder}\src\server\database
+sequelize migration:create --name initial_"table_name"
+sequelize db:migrate --env development
+'''
+models下のモデルを編集
+
+参考：
+Sequelizeでデータベース作成
+https://qiita.com/cobot00/items/0bc0da1095e09bcd0d5f
+Sequelizeでデータベース更新
+https://dev.to/nedsoft/add-new-fields-to-existing-sequelize-migration-3527
+データ型
+https://sequelize.org/v5/manual/data-types.html
+
+* MySQLでユーザー認証方法の設定が必要
+MySQLでデフォルトとなっている認証方法がNodeのModuleで未実装のためMySQL側で旧認証方法へ変更が必要
+参考：https://qiita.com/monga3/items/6583c07a9b275b469608
+'''
+ALTER USER 'username'@'hostname' IDENTIFIED WITH mysql_native_password BY 'password'
+'''
+
 # システムダイアグラム
 TBD
+
+# システム設定
+
+
+

@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import LiveHelpIcon from '@material-ui/icons/LiveHelp';
 
 import URLs from './../../../common/config';
+import { Route } from 'react-router-dom';
 
 // Generate Order Data
 function createData(id, date, name, shipTo, paymentMethod, amount) {
@@ -93,6 +94,10 @@ export default function ideaListPage() {
             <Box p={1}>
               <Link href={URLs.persona} variant="body2">SWOT</Link>
               <LiveHelpIcon className={classes.icon} />
+            </Box>
+            <Box p={1}>
+              <Link href={URLs.sample} variant="body2">Sample</Link>
+              <LiveHelpIcon className={classes.icon} fontSize="small" />
             </Box>
           </Box>  
         </Grid>
