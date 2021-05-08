@@ -1,34 +1,15 @@
-import mysql from 'mysql';
+import mysql from 'mysql2';
 import config from '../common/config'
+import Sequelize from 'sequelize'
+import models from './models'
 
-const pool = mysql.createPool({
-    connectionLimit: 5,
-    host: config.databaseSetting.host,
-    user: config.databaseSetting.user,
-    password: config.databaseSetting.password,
-    database: config.databaseSetting.database,
-})
-
-function execute(query, parameter) {
-    console.log('Execute Query')
-    pool.getConnection((err, connection) => {
-        if(err) throw err
-        if(parameter == null) {
-            connection.query(query, (err, result, field) => {
-                connection.release()
-                if(err) throw err
-                console.log(result[0])
-                return result 
-            } )
-        } else {
-            connection.query(query, parameter, (err, result, field) => {
-                connection.release()
-                if(err) throw err
-                console.log(result[0])
-                return result 
-            } )
-        }
-    })
+function execute() {
+    (async()=>{
+        const results = await models.categories.findAll();
+        results.map((res)=>{
+          console.log(res.id + " " + res.name);
+        })
+      })();
 }
 
 module.exports = {

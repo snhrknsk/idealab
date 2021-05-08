@@ -8,6 +8,7 @@ import axios from 'axios'
  * home画面のsampleからリンク
  */
 const testServer = 'http://localhost:3000/'
+const testServerpost = 'http://localhost:8080/'
 
 export default function sample() {
   const classes = useStyles();
@@ -37,7 +38,7 @@ function callPOSTAPI (event) {
         userid: '5',
         username: 'Yamada Trou'
     }
-    axios.post(testServer + 'testpostapi', data).then((res) => {console.log(res)}).catch(console.error)
+    axios.post(testServerpost + 'testpostapi', data).then((res) => {console.log(res)}).catch(console.error)
 }
 
 const useStyles = makeStyles((theme) => ({

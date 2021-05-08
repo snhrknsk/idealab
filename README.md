@@ -114,20 +114,30 @@ config\config.jsonを編集
 テーブル作成
 ```
 cd {checkout folder}\src\server\database
-sequelize migration:create --name initial_"table_name"
+sequelize model:create --name table_name --underscored --attributes attr_name:string,attr_name2:date
 sequelize db:migrate --env development
 ```
 models下のモデルを編集  
+初期データベース構築方法  
+```
+cd {checkout folder}\src\server\database
+Seedの作成  
+sequelize seed:create --name seed_name
+必要なデータを01_initial_seedの設定してあるので初回データベース構築時に実行する  
+sequelize db:seed:all
+```
 
 参考：  
 Sequelizeでデータベース作成  
-https://qiita.com/cobot00/items/0bc0da1095e09bcd0d5f
+https://qiita.com/cobot00/items/0bc0da1095e09bcd0d5f  
 Sequelizeでデータベース更新  
-https://dev.to/nedsoft/add-new-fields-to-existing-sequelize-migration-3527
+https://dev.to/nedsoft/add-new-fields-to-existing-sequelize-migration-3527  
 データ型  
-https://sequelize.org/v5/manual/data-types.html
+https://sequelize.org/v5/manual/data-types.html  
+依存関係定義  
+https://sequelize.org/master/class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-addConstraint  
 
-* MySQLでユーザー認証方法の設定が必要
+MySQLでユーザー認証方法の設定が必要
 MySQLでデフォルトとなっている認証方法がNodeのModuleで未実装のためMySQL側で旧認証方法へ変更が必要  
 参考：https://qiita.com/monga3/items/6583c07a9b275b469608
 ```

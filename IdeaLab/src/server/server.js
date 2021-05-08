@@ -22,7 +22,7 @@ app.get('/home', function (req, res) {
 
 /**テスト用API */
 app.get('/testapi', (req, res) => {
-  database.execute('select * from user', null);
+  database.execute();
   res.set('Access-Control-Allow-Origin', '*').send({api: 'test'});
 })
 

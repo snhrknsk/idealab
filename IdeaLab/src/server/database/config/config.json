@@ -4,20 +4,41 @@
     "password": "!1234Password",
     "database": "idealab_dev",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "logging": true,
+    "pool": {
+      "max": 10,
+      "min": 3,
+      "acquire": 30000,
+      "idle":10000
+    }
   },
   "test": {
     "username": "root",
     "password": "!1234Password",
     "database": "idealab_dev",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "logging": true,
+    "pool": {
+      "max": 10,
+      "min": 3,
+      "acquire": 30000,
+      "idle":10000
+    }
   },
   "production": {
     "username": "root",
     "password": "!1234Password",
     "database": "idealab_dev",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "logging": true,
+    "pool": {
+      "max": 10,
+      "min": 3,
+      "acquire": 30000,
+      "idle":10000
+    }
   }
 }

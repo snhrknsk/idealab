@@ -3,7 +3,8 @@ const DatabaseSettings = {
     host: 'localhost',
     user: 'root',
     password: '!1234Password',
-    database: 'idealab',
+    database: 'idealab_dev',
+    database_dev: 'idealab_dev',
 }
 
 const TwitterConfig = {
