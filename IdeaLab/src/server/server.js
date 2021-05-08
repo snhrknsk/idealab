@@ -3,21 +3,30 @@ import path from 'path';
 import bodyParser from 'body-parser'
 import cors from 'cors';
 import database from './database/daoFactory'
+import logging from './common/util/logging'
+import log4js from 'log4js'
+import userManagement from './user/userManagement'
 
 const app = express();
 app.use(express.static(path.join('./', 'dist')));
 // app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.json())
+app.use(log4js.connectLogger(logging.accessLogger))
 // app.use(cors);
 
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   console.log('request get from root, display index.html')
   res.sendFile(path.join(__dirname, '..', '..', 'dist', 'index.html'))
 })
 
-app.get('/home', function (req, res) {
+app.get('/home', (req, res) => {
   console.log('request get from home, display index.html')
   res.sendFile(path.join(__dirname, '..', '..', 'dist', 'index.html'))
+})
+
+app.post('./api/login', (req, res) => {
+  console.log('login request')
+
 })
 
 /**テスト用API */
