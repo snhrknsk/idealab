@@ -12,8 +12,8 @@ module.exports = function(sequelize, DataTypes) {
     password: DataTypes.STRING(256),
     grade: DataTypes.INTEGER.UNSIGNED,
     user_type: DataTypes.INTEGER.UNSIGNED,
-    created_at: DataTypes.DATE,
-    updated_at: DataTypes.DATE,
+    // created_at: DataTypes.DATE,
+    // updated_at: DataTypes.DATE,
     deleted_at: DataTypes.DATE,
   }, {
       underscored: true,

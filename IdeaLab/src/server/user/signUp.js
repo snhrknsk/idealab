@@ -4,7 +4,7 @@ function signUp (userInfo) {
     console.log(userInfo);
     return new Promise((resolve, reject) => {
         console.log(validateUser(userInfo).then(valid => {
-            console.log("isValid ? " + valid)
+            console.log("Register User isValid ? " + valid)
             // return new Promise((resolve, reject) => {
                 if (valid) {
                     models.users.create(userInfo).then((result) => {

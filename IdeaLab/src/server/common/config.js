@@ -1,3 +1,8 @@
+const Web = {
+    domain: 'idealab.site',
+    port: 3000,
+}
+
 const DatabaseSettings = {
     connectionLimit: 10,
     host: 'localhost',
@@ -12,6 +17,7 @@ const TwitterConfig = {
 }
 
 module.exports = {
+    'webSetting': Web,
     'databaseSetting': DatabaseSettings,
     'twitterOAuth': TwitterConfig,
 }
