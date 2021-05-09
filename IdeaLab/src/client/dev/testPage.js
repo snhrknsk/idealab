@@ -36,7 +36,7 @@ function callPOSTAPI (event) {
     console.log('test POST call :' + params)
     var data = {
         userid: '5',
-        username: 'Yamada Trou'
+        name: 'Yamada Trou'
     }
     axios.post(testServerpost + 'testpostapi', data).then((res) => {console.log(res)}).catch(console.error)
 }

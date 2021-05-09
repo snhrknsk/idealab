@@ -24,9 +24,13 @@ app.get('/home', (req, res) => {
   res.sendFile(path.join(__dirname, '..', '..', 'dist', 'index.html'))
 })
 
-app.post('./api/login', (req, res) => {
-  console.log('login request')
+// app.post('/api/login', (req, res) => {
+//   console.log('login request')
+// })
 
+app.post('/api/signup', (req, res) => {
+  console.log('sign up request');
+  userManagement.registerUser(req.body,res);
 })
 
 /**テスト用API */
@@ -37,7 +41,7 @@ app.get('/testapi', (req, res) => {
 
 app.post('/testpostapi', (req, res) => {
   console.log(req.body.userid)
-  res.set('Access-Control-Allow-Origin', '*').send({api: "post user is " + req.body.userid});
+  res.set('Access-Control-Allow-Origin', '*').send({api: "post user is " + req.body.name});
 })
 
 /**定義外のリクエストが来た場合 */

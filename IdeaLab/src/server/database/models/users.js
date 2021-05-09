@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
               // associations can be defined here
           }
       },
-      timestamps: false
+      // timestamps: false
   });
   return users;
 };
