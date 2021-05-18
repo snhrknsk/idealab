@@ -39,6 +39,13 @@ module.exports = {
         {id: 1, name: 'ユーザー', mail: 'test@gmail.com', occupation: '会社員', password: 'password', grade: 1, user_type: 2, created_at: now, updated_at: now, deleted_at: null},
         {id: 2, name: 'ユーザー2', mail: 'test2@gmail.com', occupation: '会社員', password: 'password', grade: 1, user_type: 2, created_at: now, updated_at: now, deleted_at: null},
       ],{}
+    ),
+    await queryInterface.bulkInsert(
+      'idealists', 
+      [
+        {id: 1, title: '20年後の職業', owner: 'ユーザー1', user_id: 1, category: 2, deleted_at: null, good: 10, public: 0, template_id: 1, created_at: now, updated_at: now},
+        {id: 2, title: '儲かるビジネス', owner: 'ユーザー2', user_id: 2, category: 1, deleted_at: null, good: 10, public: 0, template_id: 1, created_at: now, updated_at: now},
+      ],{}
     )
   },
 
@@ -49,6 +56,7 @@ module.exports = {
       await queryInterface.bulkDelete('user_types', null, {}),
       await queryInterface.bulkDelete('grades', null, {}),
       await queryInterface.bulkDelete('users', null, {}),
+      await queryInterface.bulkDelete('idealists', null, {}),
     ]
   }
 };

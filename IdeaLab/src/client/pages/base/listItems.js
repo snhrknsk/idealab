@@ -13,6 +13,10 @@ import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import NewReleasesIcon from '@material-ui/icons/NewReleases';
 import InfoIcon from '@material-ui/icons/Info';
 
+/**
+ * メニューコンポーネント
+ * templatePageで利用
+ */
 export const mainListItems = (
   <div>
     <ListItem component="a" href="/">
@@ -25,7 +29,7 @@ export const mainListItems = (
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
-      <ListItemText primary="プロフィール" />
+      <ListItemText primary="アカウント" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>

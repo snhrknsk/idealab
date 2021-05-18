@@ -125,6 +125,8 @@ Seedの作成
 sequelize seed:create --name seed_name
 必要なデータを01_initial_seedの設定してあるので初回データベース構築時に実行する  
 sequelize db:seed:all
+再度DBでSeedを構築しなおす場合
+sequelize db:seed:undo:all
 ```
 
 参考：  

@@ -30,7 +30,7 @@ app.get('/home', (req, res) => {
 app.post('/api/login', userManagement.login);
 app.post('/api/signup', userManagement.registerUser);
 
-app.post('/api/getAllBoardList', ideaBoardManagement.getAllBoardList)
+app.post('/api/getBoardList', ideaBoardManagement.getBoardList)
 
 /**テスト用API */
 app.get('/testapi', (req, res) => {

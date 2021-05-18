@@ -9,9 +9,9 @@ exports.registerUser = function registerUser (req, res, next) {
     var userInfo = req.body;
     logger.info('Register User username:' + userInfo.name);
     signUp.signUp(userInfo).then(result => {
-        res.send({success: true});
+        res.send({errorCode: errorCode.code.success});
     }).catch(error => {
-        res.send({success: false, cause: error});
+        res.send({errorCode: errorCode.code.faital, cause: error});
     });
 };
 
